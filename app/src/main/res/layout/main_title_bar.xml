@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/title_bar"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    android:paddingTop="7dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:background="@color/purple">
+    <!--一个是显示返回键，一个是显示标题框-->
+<!--    android:background="@android:color/transparent"-->
+    <!--通过TextView来显示，id ： tv_back , tv_main_title -->
+    <TextView
+        android:id="@+id/folder"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/ic_dirc"
+        tools:ignore="InvalidId"
+        android:layout_alignParentStart="true" />
+<!--    线性布局，水平布局-->
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:gravity="right"
+        tools:ignore="RtlHardcoded">
+        <TextView
+            android:id="@+id/search"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/ic_search"
+            android:layout_marginRight="10dp"
+            tools:ignore="DuplicateIds" />
+        <TextView
+            android:id="@+id/sec_list"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/ic_export"
+            android:layout_marginRight="10dp"
+            tools:ignore="DuplicateIds" />
+        <TextView
+            android:id="@+id/set"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/ic_set"
+            tools:ignore="DuplicateIds" />
+    </LinearLayout>
+</RelativeLayout>

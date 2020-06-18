@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/title_bar"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    android:paddingTop="7dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:background="@color/purple">
+    <!--一个是显示返回键，一个是显示标题框-->
+    <TextView
+        android:id="@+id/back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/ic_back"
+        tools:ignore="InvalidId"
+        android:layout_alignParentStart="true" />
+    <!--    线性布局，水平布局-->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/bar_title"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        tools:ignore="InvalidId" />
+
+</RelativeLayout>

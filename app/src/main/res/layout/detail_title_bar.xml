@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/title_bar"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:paddingTop="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:background="@color/purple">
+    <!--一个是显示返回键，一个是显示标题框-->
+    <TextView
+        android:id="@+id/back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/ic_back"
+        tools:ignore="InvalidId"
+        android:layout_alignParentStart="true" />
+    <!--    线性布局，水平布局-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:gravity="right"
+        tools:ignore="RtlHardcoded">
+        <TextView
+            android:id="@+id/goback"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/ic_goback"
+            android:layout_marginRight="10dp"
+            tools:ignore="DuplicateIds" />
+        <TextView
+            android:id="@+id/refresh"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/ic_refresh"
+            android:layout_marginRight="10dp"
+            tools:ignore="DuplicateIds" />
+        <TextView
+            android:id="@+id/item_sec"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/ic_list"
+            android:layout_marginRight="10dp"
+            tools:ignore="DuplicateIds" />
+        <TextView
+            android:id="@+id/eyes"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/ic_eye"
+            android:layout_marginRight="10dp"
+            tools:ignore="DuplicateIds" />
+        <TextView
+            android:id="@+id/dot"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/ic_dot"
+            tools:ignore="DuplicateIds" />
+    </LinearLayout>
+</RelativeLayout>
