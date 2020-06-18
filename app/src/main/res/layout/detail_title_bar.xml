@@ -56,10 +56,17 @@
             android:layout_marginRight="10dp"
             tools:ignore="DuplicateIds" />
         <TextView
-            android:id="@+id/dot"
+            android:id="@+id/share"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:background="@drawable/ic_dot"
+            android:background="@drawable/ic_share"
+            android:layout_marginRight="10dp"
             tools:ignore="DuplicateIds" />
+<!--        <TextView-->
+<!--            android:id="@+id/dot"-->
+<!--            android:layout_width="40dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:background="@drawable/ic_dot"-->
+<!--            tools:ignore="DuplicateIds" />-->
     </LinearLayout>
 </RelativeLayout>

@@ -28,6 +28,8 @@ public class DairyDetailActivity extends AppCompatActivity implements View.OnCli
     private TextView time;
     private String updateDairy = "http://192.168.43.212:3000/updateDairy";
     private String DataUrl;
+    private TextView goBack;
+    private TextView share;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,33 +37,26 @@ public class DairyDetailActivity extends AppCompatActivity implements View.OnCli
         ActionBar actionBar = getSupportActionBar();
         assert actionBar != null;
         actionBar.hide();
-
         setContentView(R.layout.activity_detail);
-        dairy = findViewById(R.id.dairy);
-        time = findViewById(R.id.record_time);
-        num = findViewById(R.id.count_num);
-
-        final TextView goBack = findViewById(R.id.back);
         //获取路由
         DataUrl = updateDairy;
-
         //获取传递数据
         Intent intent = getIntent();
-        //从intent对象中把封装好的数据取出来
         Bundle bundle = intent.getExtras();
         assert bundle != null;
         Log.d("budle", String.valueOf(bundle));
         dairyID = bundle.getInt("ID");
         oldTime = bundle.getString("time");
         oldContent = bundle.getString("content");
-        Log.d("the bundle",dairyID + "" );
-        //初始化界面
+        //获取元素
+        dairy = findViewById(R.id.dairy);
+        time = findViewById(R.id.record_time);
+        num = findViewById(R.id.count_num);
         init();
-        //监听注册按钮
+        goBack = findViewById(R.id.back);
+        share = findViewById(R.id.share);
         goBack.setOnClickListener(this);
-//        dairy.setKeyListener((KeyListener) this);
-//        sp = this.getSharedPreferences("data", Context.MODE_PRIVATE);
-
+        share.setOnClickListener(this);
         //实时监听输入内容
         dairy.addTextChangedListener(new TextWatcher() {
             @Override
@@ -89,6 +84,12 @@ public class DairyDetailActivity extends AppCompatActivity implements View.OnCli
         if (v.getId() == R.id.back) {
             //关闭activity
             finish();
+        }
+        if (v.getId() == R.id.eyes) {
+            Intent textIntent = new Intent(Intent.ACTION_SEND);
+            textIntent.setType("text/plain");
+            textIntent.putExtra(Intent.EXTRA_TEXT, dairy.getText().toString());
+            startActivity(Intent.createChooser(textIntent, "分享"));
         }
     }
     //发送请求
