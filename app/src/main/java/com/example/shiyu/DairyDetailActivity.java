@@ -85,7 +85,7 @@ public class DairyDetailActivity extends AppCompatActivity implements View.OnCli
             //关闭activity
             finish();
         }
-        if (v.getId() == R.id.eyes) {
+        if (v.getId() == R.id.share) {
             Intent textIntent = new Intent(Intent.ACTION_SEND);
             textIntent.setType("text/plain");
             textIntent.putExtra(Intent.EXTRA_TEXT, dairy.getText().toString());

@@ -43,6 +43,7 @@ public class EachFolderActivity extends AppCompatActivity implements View.OnClic
     private String DataUrl = "http://192.168.43.212:3000/getDairyList";
     private Integer folderID;
     private String oldContent;
+    private List<String> data = new ArrayList<>();
 
     private List<myBean> myBeanList = new ArrayList<>();//用来存放数据的数组
     public ArrayList<Map<String, Object>> list=new ArrayList<Map<String,Object>>();
@@ -55,7 +56,7 @@ public class EachFolderActivity extends AppCompatActivity implements View.OnClic
         assert actionBar != null;
         actionBar.hide();
 
-        setContentView(R.layout.fragment_folder);
+        setContentView(R.layout.select_dairy);
         title = findViewById(R.id.title);
 
         //获取传递数据
@@ -177,6 +178,17 @@ public class EachFolderActivity extends AppCompatActivity implements View.OnClic
         }
     }
 
+//    @Override
+//    public void getSelete(String s) {
+//        data.add(s);
+//        System.out.println("select is :" + s);
+//    }
+//
+//    public void removeSelect(String s) {
+//        data.remove(s);
+//        System.out.println("remove is :" + s);
+//    }
+
     //Handler运行在主线程中(UI线程中)，  它与子线程可以通过Message对象来传递数据
     @SuppressLint("HandlerLeak")
     private Handler handler = new Handler() {
@@ -184,8 +196,10 @@ public class EachFolderActivity extends AppCompatActivity implements View.OnClic
         @Override
         public void handleMessage(Message msg) {
             if (msg.what == 1) {
-                myAdapter list_item = new myAdapter(EachFolderActivity.this, R.layout.item_list, myBeanList);
+                selectAdapter list_item = new selectAdapter(EachFolderActivity.this, R.layout.item, myBeanList);
                 listView.setAdapter(list_item);
+//                listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+//                selectAdapter.setCallBack(this);
             }
         }
     };

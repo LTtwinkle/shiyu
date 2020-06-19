@@ -7,6 +7,7 @@ public class myBean {
     private String type; //使用类型
     private String title;   //存放文件内容
     private String timeDis;    //存放修改时间差
+    private Boolean isSelect; //标记选中
 
 
     public myBean(String type,String title,String timeDis,Integer ID){
@@ -45,5 +46,11 @@ public class myBean {
     }
     public void setID(Integer ID){
         this.ID = ID;
+    }
+    public Boolean getIsSelect(){
+        return isSelect;
+    }
+    public void setIsSelect(Boolean isSelect){
+        this.isSelect = isSelect;
     }
 }
