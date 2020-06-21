@@ -48,7 +48,7 @@ public class selectAdapter extends ArrayAdapter {
                 Toast.makeText(getContext(),"你点击了第"+position+"项"
                         + headbox.isChecked() + myBean.getID(),Toast.LENGTH_SHORT).show();
                 //标记选中状态
-                    myBean.setIsSelect(headbox.isChecked());
+//                    myBean.setIsSelect(headbox.isChecked());
 //                setIsSelected(isSelected);
 //                myCallBack.removeSelete(myBean[position]);
             }

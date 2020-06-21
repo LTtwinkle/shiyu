@@ -20,13 +20,11 @@ import java.util.List;
 
 public class myAdapter extends ArrayAdapter {
     private final int ItemId;
-
     public myAdapter(Context context, int headImage, List<myBean> obj){
         super(context,headImage,obj);
         ItemId = headImage;//这个是传入我们自己定义的界面
 
     }
-
     @NonNull
     @Override
     public View getView(final int position, @Nullable View convertView, @NonNull ViewGroup parent) {

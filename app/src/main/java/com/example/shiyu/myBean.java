@@ -1,5 +1,4 @@
 package com.example.shiyu;
-
 public class myBean {
     //获取文件夹列表，获取笔记列表
     private Integer userID; //存放用户ID
@@ -7,16 +6,12 @@ public class myBean {
     private String type; //使用类型
     private String title;   //存放文件内容
     private String timeDis;    //存放修改时间差
-    private Boolean isSelect; //标记选中
-
-
     public myBean(String type,String title,String timeDis,Integer ID){
         this.ID = ID;
         this.type = type;
         this.title = title;
         this.timeDis = timeDis;
     }
-
     public String getType(){
         return type;
     }
@@ -46,11 +41,5 @@ public class myBean {
     }
     public void setID(Integer ID){
         this.ID = ID;
-    }
-    public Boolean getIsSelect(){
-        return isSelect;
-    }
-    public void setIsSelect(Boolean isSelect){
-        this.isSelect = isSelect;
     }
 }

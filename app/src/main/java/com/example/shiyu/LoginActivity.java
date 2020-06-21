@@ -95,36 +95,27 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             JSONObject object=new JSONObject(jsonData);
             String code = object.getString("code");
             String msg = object.getString("msg");
-            //日志
-            Log.d("code", " ：" + code);
-            Log.d("msg", " ：" + msg);
-
             // 操作成功
             if (code.equals("200")) {
                 // 打印用户ID
                 JSONObject data = object.getJSONObject("data");
                 int userID = data.getInt("id");
                 Log.d("id"," : " + userID);
-
                 //保存用户重要信息
                 SharedPreferences sp = this.getSharedPreferences("data", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sp.edit();
                 editor.putInt("userID", userID);
                 editor.apply();
-
                 //跳转页面
                 Intent intent=new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
-
                 //创建默认文件夹
                 createDefaultFolder(userID);
             }
-
             //提示框
             Looper.prepare();
             Toast.makeText(LoginActivity.this, msg, Toast.LENGTH_SHORT).show();
             Looper.loop();
-
         } catch (JSONException e) {
             e.printStackTrace();
         }
